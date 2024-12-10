@@ -130,22 +130,32 @@ The API is documented using Swagger/OpenAPI. Access the documentation at `/api-d
    npm install
    ```
 
-3. Start the db from docker compose:
+3. Set up environment variables in `.env`: (rename the .env-example to .env)
+   ```env
+   DB_HOST=localhost
+   DB_PORT=5432
+   DB_USER=postgres
+   DB_PASSWORD=postgres
+   DB_NAME=todos
+   JWT_SECRET=your_jwt_secret
+   ```
+
+4. Start the db from docker compose:
    ```bash
    docker compose up db -d
    ```
 
-4. Run the migration:
+5. Run the migration:
    ```bash
    npm run migration:run
    ``` 
 
-5. Start the development server:
+6. Start the development server:
    ```bash
    docker compose up --build
    ``` 
 
-6. Access the API:
+7. Access the API:
    - API: http://localhost:3000
    - Swagger Documentation: http://localhost:3000/api-docs
 
